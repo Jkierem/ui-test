@@ -3,7 +3,7 @@ import { getDevtoolsCompose } from "redux-utility"
 import rootReducer from "./reducer"
 
 export const initialState = {
-  data: []
+  data: [],
 }
 
 const initStore = () => {

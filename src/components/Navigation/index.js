@@ -1,8 +1,7 @@
-import searchIcon from '../../assets/img/search.svg'
+import searchIcon from "../../assets/img/search.svg"
 
 const Navigation = () => {
-
-  const handleSubmit = (e) => e.preventDefault();
+  const handleSubmit = (e) => e.preventDefault()
 
   return (
     <nav className="nav" role="navigation">
@@ -29,16 +28,8 @@ const Navigation = () => {
           </li>
           <li>
             <form onSubmit={handleSubmit}>
-              <input
-                className="nav__search-input"
-                aria-label="search"
-                type="text"
-              />
-              <button
-                className="nav__search icon-button"
-                alt="Search"
-                type="submit"
-              >
+              <input className="nav__search-input" aria-label="search" type="text" />
+              <button className="nav__search icon-button" alt="Search" type="submit">
                 <img src={searchIcon} alt="search" />
               </button>
             </form>
@@ -46,7 +37,7 @@ const Navigation = () => {
         </ul>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation
