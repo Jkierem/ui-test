@@ -4,7 +4,7 @@ import { Either, Maybe } from "jazzi"
 
 const getEnv = (str) => process.env[`REACT_APP_${str}`]
 
-const onDev = Maybe.fromPredicate(() => process.env.NODE_ENV === "development");
+const onDev = Maybe.fromPredicate(() => process.env.NODE_ENV === "development")
 
 const firebaseInstance = Either.fromPredicate(
   () => getEnv("USE_FIREBASE") === "true"

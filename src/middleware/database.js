@@ -13,4 +13,3 @@ export const getPolls = () =>
         .then((snap) => snap.val())
     )
     .onLeft(() => Promise.resolve(mocks.data))
-

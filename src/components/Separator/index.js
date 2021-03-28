@@ -1,5 +1,5 @@
 const Separator = () => {
-  return <hr className="separator" />;
-};
+  return <hr className="separator" />
+}
 
-export default Separator;
+export default Separator

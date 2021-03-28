@@ -1,6 +1,6 @@
-import { Route, BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
-import { Home } from "./views";
-import "./App.scss";
+import { Route, BrowserRouter as Router, Switch, Redirect } from "react-router-dom"
+import { Home } from "./views"
+import "./App.scss"
 
 const App = () => {
   return (
@@ -10,11 +10,11 @@ const App = () => {
           <Home />
         </Route>
         <Route>
-          <Redirect to="/"/>
+          <Redirect to="/" />
         </Route>
       </Switch>
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App

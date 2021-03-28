@@ -1,7 +1,7 @@
-import thumbsUp from '../../assets/img/thumbs-up.svg'
-import thumbsDown from '../../assets/img/thumbs-down.svg'
-import popeFran from '../../assets/img/pope-francis.png'
-import popeFran2x from '../../assets/img/pope-francis.@2x.png'
+import thumbsUp from "../../assets/img/thumbs-up.svg"
+import thumbsDown from "../../assets/img/thumbs-down.svg"
+import popeFran from "../../assets/img/pope-francis.png"
+import popeFran2x from "../../assets/img/pope-francis.@2x.png"
 
 const Hero = () => {
   return (
@@ -21,8 +21,8 @@ const Hero = () => {
             <h2 className="featured-card__title">Pope Francis?</h2>
             <p className="featured-card__desc">
               He’s talking tough on clergy sexual abuse, or is he just another
-              pervert protector? (thumbs down) or a true pedophile punishing
-              pontiff? (thumbs up)
+              pervert protector? (thumbs down) or a true pedophile punishing pontiff?
+              (thumbs up)
             </p>
             <p className="featured-card__more-info">
               <a href="http://wikipedia.com">
@@ -63,7 +63,7 @@ const Hero = () => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

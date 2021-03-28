@@ -1,6 +1,6 @@
-import { Footer, Hero, Navigation, Separator, Spinner } from "../../components";
-import bgPeople from '../../assets/img/bg-people.png'
-import bgPeople2x from '../../assets/img/bg-people.@2x.png'
+import { Footer, Hero, Navigation, Separator, Spinner } from "../../components"
+import bgPeople from "../../assets/img/bg-people.png"
+import bgPeople2x from "../../assets/img/bg-people.@2x.png"
 
 const Body = () => {
   return (
@@ -12,9 +12,9 @@ const Body = () => {
         </div>
         <div className="banner__right">
           <p className="banner__text">
-            Rule of Thumb is a crowd sourced court of public opinion where
-            anyone and everyone can speak out and speak freely. It’s easy: You
-            share your opinion, we analyze and put the data in a public report.
+            Rule of Thumb is a crowd sourced court of public opinion where anyone and
+            everyone can speak out and speak freely. It’s easy: You share your
+            opinion, we analyze and put the data in a public report.
           </p>
         </div>
         <button className="icon-button" aria-label="close">
@@ -51,8 +51,8 @@ const Body = () => {
         </div>
       </aside>
     </>
-  );
-};
+  )
+}
 
 const Home = () => {
   return (
@@ -65,7 +65,7 @@ const Home = () => {
         <Footer />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

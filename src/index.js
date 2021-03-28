@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from 'react-redux';
-import store from './store';
-import App from "./App";
-import "./middleware/firebase";
+import React from "react"
+import ReactDOM from "react-dom"
+import { Provider } from "react-redux"
+import store from "./store"
+import App from "./App"
+import "./middleware/firebase"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,4 +12,4 @@ ReactDOM.render(
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
-);
+)
