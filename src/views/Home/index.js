@@ -1,4 +1,4 @@
-import { Footer, Hero, Navigation, Separator } from "../../components";
+import { Footer, Hero, Navigation, Separator, Spinner } from "../../components";
 import bgPeople from '../../assets/img/bg-people.png'
 import bgPeople2x from '../../assets/img/bg-people.@2x.png'
 
@@ -26,9 +26,7 @@ const Body = () => {
         </button>
       </aside>
       <main role="main">
-        {
-          // Here
-        }
+        <Spinner />
       </main>
       <aside
         className="banner banner-bottom"
