@@ -38,7 +38,7 @@ ul {
     list-style: none;
 }
 
-hr[role="separator"] {
+hr.separator {
     border: 0 none;
     border-bottom: 2px dotted var(--color-dark-gray);
     margin: 1.5rem 1rem;
@@ -207,7 +207,7 @@ hr[role="separator"] {
             var(--color-dark-background),
             var(--color-dark-background)
         ),
-        -25vw 0/160vw no-repeat url('./assets/img/pope-francis.png');
+        -25vw 0/160vw no-repeat url(./assets/img/pope-francis.png);
     filter: blur(1rem);
 }
 
@@ -489,7 +489,7 @@ main h2 {
     .featured-card__glass-background {
         background:
             center no-repeat linear-gradient(var(--color-dark-background), var(--color-dark-background)),
-            7vw -6.5rem/115vw auto no-repeat url('./assets/img/pope-francis.png');
+            7vw -6.5rem/115vw auto no-repeat url(./assets/img/pope-francis.png);
     }
 
     .featured-card__content {
@@ -582,7 +582,7 @@ main h2 {
     }
 
     .max-centered > *,
-    .max-centered > hr[role="separator"] {
+    .max-centered > hr.separator {
         margin-right: 0;
         margin-left: 0;
     }
@@ -661,7 +661,7 @@ main h2 {
     .featured-card__glass-background {
         background:
             center no-repeat linear-gradient(var(--color-dark-background), var(--color-dark-background)),
-            calc(-50vw + 650px) -6rem/105vw auto no-repeat url('./assets/img/pope-francis.png');
+            calc(-50vw + 650px) -6rem/105vw auto no-repeat url(./assets/img/pope-francis.png);
     }
 
     .featured-card__content {
@@ -737,7 +737,7 @@ main h2 {
         font-size: 2.5rem;
     }
 
-    hr[role="separator"] {
+    hr.separator {
         margin: 2rem 0;
     }
 }

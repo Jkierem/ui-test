@@ -1,5 +1,5 @@
 const Separator = () => {
-  return <hr role="separator" />;
+  return <hr className="separator" />;
 };
 
 export default Separator;

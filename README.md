@@ -2,9 +2,9 @@
 
 ## Running this
 
-1 - run `yarn install`
-2 - create a .env file (copy .example.env and fill in the gaps) set an enviroment variable called REACT_APP_USE_FIREBASE as true. If this is skipped or if REACT_APP_USE_FIREBASE is false, mocked data will be used. Otherwise, it will use the provided firebase data. For more info, go to the firebase section
-3 - run `yarn start`
+1. run `yarn install`
+2. create a .env file (copy .example.env and fill in the gaps) set an enviroment variable called REACT_APP_USE_FIREBASE as true. If this is skipped or if REACT_APP_USE_FIREBASE is false, mocked data will be used. Otherwise, it will use the provided firebase data. For more info, go to the firebase section
+3. run `yarn start`
 
 ## Dependencies to look out for
 
@@ -23,7 +23,7 @@
 
 ## Backend - Firebase
 
-This uses firebase realtime database and expects a single path `/data` as an array of objects with the following shape:
+For obvious security reasons, the  firebase configuration is not commited to the repo. This uses firebase realtime database and expects a single path `/data` as an array of objects with the following shape:
 
 ```javascript
 {

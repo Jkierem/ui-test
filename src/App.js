@@ -1,6 +1,6 @@
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import { Home } from "./views";
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
   return (
@@ -8,6 +8,9 @@ const App = () => {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route>
+          <Redirect to="/"/>
         </Route>
       </Switch>
     </Router>
