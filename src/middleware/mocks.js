@@ -1,4 +1,4 @@
-export default {
+export const mocks = {
   data: [
     {
       name: "Kanye West",
@@ -74,3 +74,5 @@ export default {
     },
   ],
 }
+
+export default mocks

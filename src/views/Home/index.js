@@ -1,8 +1,33 @@
-import { Footer, Hero, Navigation, Separator, Spinner } from "../../components"
+import { Suspense, useEffect, useState } from "react"
+import { Footer, Hero, Navigation, Select, Separator, Spinner } from "../../components"
+import { listenToPolls } from "../../middleware/database"
+import useDevice from "../../hooks/useDevice"
+import CardList from "../../components/CardList"
 import bgPeople from "../../assets/img/bg-people.png"
 import bgPeople2x from "../../assets/img/bg-people.@2x.png"
+import "./style.scss"
 
 const Body = () => {
+  const [mode, setMode] =  useState("vertical")
+  const device = useDevice();
+  useEffect(() => {
+    device.match({
+      Mobile: () => setMode("horizontal"),
+      _: () => setMode("vertical")
+    })
+  },[ device ]);
+
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const ref = listenToPolls(data => {
+      setLoading(false);
+      setData(data);
+    })
+
+    return () => ref.map(detach => detach())
+  },[])
+
   return (
     <>
       <aside className="banner banner-top" role="doc-tip" aria-label="Speak Out">
@@ -26,7 +51,26 @@ const Body = () => {
         </button>
       </aside>
       <main role="main">
-        <Spinner />
+        <header className="list-header">
+          <h2>
+            Previous Polls
+          </h2>
+          {!device.isMobile() && <Select 
+            value={mode}
+            onChange={setMode}
+            options={[
+              { value: "vertical" , label: "List"},
+              { value: "grid" , label: "Grid"},
+            ]}
+          />}
+        </header>
+        <Suspense loading={loading} fallback={<Spinner />} >
+          <CardList 
+            data={data}
+            mode={mode}
+            device={device}
+          />
+        </Suspense>
       </main>
       <aside
         className="banner banner-bottom"
