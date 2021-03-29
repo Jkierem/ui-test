@@ -7,6 +7,15 @@
 3. create a .env file (copy .example.env and fill in the gaps) inside the root folder and set an enviroment variable called REACT_APP_USE_FIREBASE as true (literally just true. No quotes needed). If this is skipped or if REACT_APP_USE_FIREBASE is false, localStorage data will be used. Otherwise, it will use the provided firebase data. For more info, go to the firebase section
 4. run `yarn start`
 
+## Project Structure
+
+The code is stored inside of the src folder where:
+- components: holds common components that can and should be recycled. Although some components here might be tied to some logic.
+- views: holds components that represent different routes in the page
+- hooks: folder for custom hooks. Currently only one: useDevice
+- middleware: folder containing all the logic to connect to backend
+- assets: static assets to be processed by webpack
+
 ## Dependencies to look out for
 
 ### Third party
@@ -48,6 +57,7 @@ For obvious security reasons, the  firebase configuration is not commited to the
 
 ## Important Notes and possible improvements
 
+- Jazzi is based on haskell patterns so if you are going to look into it, you know what to expect.
 - Redux was setup but ended up unused. There was a plan to use it to store some i18n data but since i18n was not implemented, then the idea was scrapped. To see implementation look at past commits.
 - usePromise and useAsyncState were used during development for fetching data but removed due to becoming unused.
 - I18n was intented but due to time constraints it was not. The plan was to use i18next and redux to add i18n to the page.

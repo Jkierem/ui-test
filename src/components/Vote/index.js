@@ -51,7 +51,7 @@ const VoteComponent = ({ onSubmit, lastUpdated, category, small }) => {
       <div className={modifiedCl}>
         {state.match({
           Available: () => `${amount} ${unit} ago in ${category}`,
-          Voted: () => "Thank you for voting!"
+          Voted: () => "Thank you for voting!",
         })}
       </div>
       <div className={optsCl}>
