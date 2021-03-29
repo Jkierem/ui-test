@@ -57,3 +57,4 @@ For obvious security reasons, the  firebase configuration is not commited to the
 - Create-react-app comes with testing already setup but no tests were made so please don't expect it to work.
 - The gradient in the images while on the list view doesn't work properly due to the nature of mix-blend. Needs further work.
 - Deployment was planed on firebase. Currently not deployed 
+- The only part of the data that can be modified is the vote count. This is due to time constraints 
