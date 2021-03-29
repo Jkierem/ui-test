@@ -12,7 +12,7 @@ const firebaseInstance = Either.fromPredicate(
   const firebaseConfig = {
     apiKey: getEnv("API_KEY"),
     authDomain: getEnv("AUTH_DOMAIN"),
-    databaseURL: getEnv("DB_URL"),
+    databaseURL: getEnv("DATABASE_URL"),
     storageBucket: getEnv("STORAGE_BUCKET"),
   }
 
@@ -26,7 +26,8 @@ const firebaseInstance = Either.fromPredicate(
 onDev.effect(() => {
   firebaseInstance.match({
     Right: () => console.log("Firebase initialized"),
-    Left: () => console.log("Firebase not initialized... Will fallback to mocks."),
+    Left: () =>
+      console.log("Firebase not initialized... Will fallback to localStorage."),
   })
 })
 
