@@ -1,25 +1,26 @@
 # UI-Test
 
-## Running this
+## Getting Started
 
-1. run `yarn install`
-2. create a .env file (copy .example.env and fill in the gaps) set an enviroment variable called REACT_APP_USE_FIREBASE as true. If this is skipped or if REACT_APP_USE_FIREBASE is false, localStorage data will be used. Otherwise, it will use the provided firebase data. For more info, go to the firebase section
-3. run `yarn start`
+1. Clone this repo and have yarn installed on your machine
+2. On a terminal, go to the root folder and run `yarn install`
+3. create a .env file (copy .example.env and fill in the gaps) inside the root folder and set an enviroment variable called REACT_APP_USE_FIREBASE as true (literally just true. No quotes needed). If this is skipped or if REACT_APP_USE_FIREBASE is false, localStorage data will be used. Otherwise, it will use the provided firebase data. For more info, go to the firebase section
+4. run `yarn start`
 
 ## Dependencies to look out for
 
 ### Third party
 
 - **Prettier**: for linting purposes
-- ~~**redux**: for state management~~ scrapped during development
+- ~~**redux**: for state management~~ scrapped during development. If you want to checkout the implementation, look at past commits.
 - **react-router**: for client side routing
 - **create-react-app**: used for initial scaffolding and configuration of the project. This includes the react-scripts dependency
 
 ### Made by me (Juan Gomez)
 
-- **jazzi**: Library for algebraic structures. [Docs found here](https://github.com/Jkierem/jazzi)
+- **jazzi**: Library for algebraic structures. (If you like **functional programming** please do take a look) [Docs found here](https://github.com/Jkierem/jazzi)
 - **getclassname**: utility for ease of handling class names in javascript. Also allows for a sass-like syntax. [Docs found here](https://github.com/Jkierem/getclassname)
-- ~~**redux-utility**: utitlitites for removing boilerplate code for redux. [Docs found here](https://github.com/Jkierem/redux-utility)~~ Removed due to not needing redux
+- ~~**redux-utility**: utitlitites for removing boilerplate code for redux. [Docs found here](https://github.com/Jkierem/redux-utility)~~ Removed due to not needing redux. Take a look at past commits specially the deleted hooks for reference.
 
 ## Backend - localStorage
 
@@ -27,7 +28,7 @@ When firebase is turned off, it will fallback to using localStorage for persista
 
 ## Backend - Firebase
 
-For obvious security reasons, the  firebase configuration is not commited to the repo. This uses firebase realtime database and expects a single path `/data` as an objects with the following shape:
+For obvious security reasons, the  firebase configuration is not commited to the repo. This uses firebase realtime database and expects a single path `/data` as an object with the following shape:
 
 ```javascript
 {
@@ -58,3 +59,4 @@ For obvious security reasons, the  firebase configuration is not commited to the
 - The gradient in the images while on the list view doesn't work properly due to the nature of mix-blend. Needs further work.
 - Deployment was planed on firebase. Currently not deployed 
 - The only part of the data that can be modified is the vote count. In practice, this means the last modified attribute is set and will not update accordingly. This is due to time constraints 
+- the local observable is missing an unsubscribe function for when the component gets unmounted. Shouldn't be a cause for bugs in the current state but will be if the component get unmounted and remounted.
