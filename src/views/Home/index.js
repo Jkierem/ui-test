@@ -1,5 +1,12 @@
 import { Suspense, useEffect, useState } from "react"
-import { Footer, Hero, Navigation, Select, Separator, Spinner } from "../../components"
+import {
+  Footer,
+  Hero,
+  Navigation,
+  Select,
+  Separator,
+  Spinner,
+} from "../../components"
 import { listenToPolls } from "../../middleware/database"
 import useDevice from "../../hooks/useDevice"
 import CardList from "../../components/CardList"
@@ -8,25 +15,27 @@ import bgPeople2x from "../../assets/img/bg-people.@2x.png"
 import "./style.scss"
 
 const Body = () => {
-  const [mode, setMode] =  useState("vertical")
-  const device = useDevice();
+  const device = useDevice()
+  const [mode, setMode] = useState(device.isMobile() ? "horizontal" : "vertical")
   useEffect(() => {
     device.match({
       Mobile: () => setMode("horizontal"),
-      _: () => setMode("vertical")
+      _: () => setMode("vertical"),
     })
-  },[ device ]);
+  }, [device])
 
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true)
+  const [data, setData] = useState([])
   useEffect(() => {
-    const ref = listenToPolls(data => {
-      setLoading(false);
-      setData(data);
+    const ref = listenToPolls((data) => {
+      if (data.exists()) {
+        setLoading(false)
+        setData(Object.entries(data.val()))
+      }
     })
 
-    return () => ref.map(detach => detach())
-  },[])
+    return () => ref.map((detach) => detach())
+  }, [])
 
   return (
     <>
@@ -52,24 +61,20 @@ const Body = () => {
       </aside>
       <main role="main">
         <header className="list-header">
-          <h2>
-            Previous Polls
-          </h2>
-          {!device.isMobile() && <Select 
-            value={mode}
-            onChange={setMode}
-            options={[
-              { value: "vertical" , label: "List"},
-              { value: "grid" , label: "Grid"},
-            ]}
-          />}
+          <h2>Previous Polls</h2>
+          {!device.isMobile() && (
+            <Select
+              value={mode}
+              onChange={setMode}
+              options={[
+                { value: "vertical", label: "List" },
+                { value: "grid", label: "Grid" },
+              ]}
+            />
+          )}
         </header>
-        <Suspense loading={loading} fallback={<Spinner />} >
-          <CardList 
-            data={data}
-            mode={mode}
-            device={device}
-          />
+        <Suspense loading={loading} fallback={<Spinner />}>
+          <CardList data={data} mode={mode} device={device} />
         </Suspense>
       </main>
       <aside

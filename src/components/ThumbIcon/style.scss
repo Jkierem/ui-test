@@ -1,0 +1,39 @@
+.thumb-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  
+  &--selected {
+    border: 2px solid white;
+  }
+  
+  &--clickable {
+    background-clip: padding-box;
+    cursor: pointer;
+  }
+
+  & > img {
+    width: 24px;
+    height: 24px;
+  }
+
+  &--small {
+    width: 30px;
+    height: 30px;
+
+    & > img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &--positive {
+    background-color: rgb(60, 187, 180);
+  }
+  &--negative {
+    background-color: rgb(249, 173, 29);
+  }
+}
